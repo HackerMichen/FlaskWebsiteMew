@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Say hello</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='Css/main.css')}}">
+</head>
+<body>
+    <img src="https://i.etsystatic.com/10291389/r/il/9ce349/2395137643/il_1140xN.2395137643_hw6y.jpg" style="width: 15%; height: 15%;">
+    <br>
+    <form action="greet" method="post">
+        {% for message in get_flashed_messages()%}
+            <p> {{message}}</p>
+        {% endfor %}
+        <br>
+        <input type="text" name="name_input">
+        <br>
+        <input type="submit" value="GREET" id="greet">
+
+    </form>
+
+</body>
+</html>
